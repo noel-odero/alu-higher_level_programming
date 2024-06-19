@@ -1,2 +1,2 @@
 #!/bin/bash
-print("I dont give a bug!")
+python3 "$PYFILE"
