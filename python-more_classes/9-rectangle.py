@@ -5,6 +5,7 @@ instatntiating a class
 
 '''
 
+
 class Rectangle:
     """
     A class to represent a rectangle.
@@ -155,14 +156,5 @@ class Rectangle:
         """
         Returns a new Rectangle instance with width == height == size.
 
-        Parameters
-        ----------
-            size : int, optional
-                The size of the new square (default is 0).
-
-        Returns
-        -------
-            Rectangle
-                A new instance of Rectangle with width and height equal to size.
         """
         return cls(size, size)
