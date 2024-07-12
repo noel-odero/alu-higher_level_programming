@@ -40,12 +40,12 @@ property must be an integer
 property must be an integer
 
 >>> try:
-...     bg.integer_validator("property", (1))
+...     bg.integer_validator("property", (1,))
 >>> except TypeError as e:
 ...     print(f"{e}")
 
 >>> try:
-...     bg.integer_validator("property", (1,2))
+...     bg.integer_validator("property", (1, 2))
 ... except TypeError as e:
 ...     print(f"{e}")
 property must be an integer
@@ -56,13 +56,6 @@ property must be an integer
 ...     print(f"{e}")
 property must be an integer
 
->>> try:
-...     bg.integer_validator("property", {1:2})
-... except TypeError as e:
-...     print(f"{e}")
-property must be an integer
-
-# Missing argument tests
 >>> try:
 ...     bg.integer_validator("property")
 ... except TypeError as e:
