@@ -4,7 +4,10 @@
 
 
 class BaseGeometry:
-    # instance method
+    ''' instance method'''
+    def __init__(self):
+        '''initialize class '''
+        pass
 
     def area(self):
         '''raises an exception'''
