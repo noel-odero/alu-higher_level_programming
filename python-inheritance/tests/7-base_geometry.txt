@@ -1,30 +1,84 @@
-# Test for BaseGeometry class
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Using 'BaseGeometry'
-
+# Initialize BaseGeometry instance
 >>> bg = BaseGeometry()
 
 # Valid integer_validator tests
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
-# Invalid integer_validator tests - TypeError
->>> try:
-...     bg.integer_validator("name", "John")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] name must be an integer
-
 # Invalid integer_validator tests - ValueError
 >>> try:
-...     bg.integer_validator("age", 0)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] age must be greater than 0
+...     bg.integer_validator("property", -2)
+... except ValueError as e:
+...     print(f"{e}")
+property must be greater than 0
 
 >>> try:
-...     bg.integer_validator("distance", -4)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] distance must be greater than 0
+...     bg.integer_validator("property", 0)
+... except ValueError as e:
+...     print(f"{e}")
+property must be greater than 0
+
+# Invalid integer_validator tests - TypeError
+>>> try:
+...     bg.integer_validator("property", "string")
+... except TypeError as e:
+...     print(f"{e}")
+property must be an integer
+
+>>> try:
+...     bg.integer_validator("property", [])
+... except TypeError as e:
+...     print(f"{e}")
+property must be an integer
+
+>>> try:
+...     bg.integer_validator("property", [1])
+... except TypeError as e:
+...     print(f"{e}")
+property must be an integer
+
+>>> try:
+...     bg.integer_validator("property", (1))
+>>> except TypeError as e:
+...     print(f"{e}")
+
+>>> try:
+...     bg.integer_validator("property", (1,2))
+... except TypeError as e:
+...     print(f"{e}")
+property must be an integer
+
+>>> try:
+...     bg.integer_validator("property", {})
+... except TypeError as e:
+...     print(f"{e}")
+property must be an integer
+
+>>> try:
+...     bg.integer_validator("property", {1:2})
+... except TypeError as e:
+...     print(f"{e}")
+property must be an integer
+
+# Missing argument tests
+>>> try:
+...     bg.integer_validator("property")
+... except TypeError as e:
+...     print(f"{e}")
+integer_validator() missing 1 required positional argument: 'value'
+
+>>> try:
+...     bg.integer_validator()
+... except TypeError as e:
+...     print(f"{e}")
+integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# Floating point value test
+>>> try:
+...     bg.integer_validator("property", 1.0)
+... except TypeError as e:
+...     print(f"{e}")
+property must be an integer
 
