@@ -74,4 +74,3 @@ integer_validator() missing 2 required positional arguments: 'name' and 'value'
 ... except TypeError as e:
 ...     print(f"{e}")
 property must be an integer
-
