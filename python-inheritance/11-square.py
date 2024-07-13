@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """basegeometryclass"""
 
@@ -53,4 +52,3 @@ class Square(Rectangle):
     def __str__(self):
         """returns string of square"""
         return "[Square] {}/{}".format(self.__size, self.__size)
-
