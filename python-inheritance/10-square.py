@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for Square class that inherits from Rectangle"""
 
+
 class BaseGeometry:
     """BaseGeometry class with area and integer validation methods"""
 
