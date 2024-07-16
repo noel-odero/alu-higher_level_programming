@@ -6,8 +6,6 @@
 def read_file(filename=""):
     '''function to read file '''
 
-    with open(filename, 'r', encoding='utf-8') as fp:
-        # opening a file with read access mode
-
-        print(fp.read())
-
+    with open(filename, 'r', encoding="utf-8") as f:
+        read_data = f.read()
+        print(read_data, end='')
