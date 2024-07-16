@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 
-'''Add all args to a python list and save them to a file '''
+'''Add all args to a python list and save them to a file'''
 
 import sys
 import os.path
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
     load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
@@ -18,7 +18,7 @@ if __name__=="__main__":
     else:
         items = []
 
-     # Add all arguments to the list
+    # Add all arguments to the list
     items.extend(sys.argv[1:])
 
     # Save the updated list back to the file
