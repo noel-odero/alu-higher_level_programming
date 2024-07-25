@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""Fetches the URL: https://intranet.hbtn.io/status
-with `requests` module
 """
-
+Python script that fetches https://alu-intranet.hbtn.io/status
+"""
 import requests
 
-
-if __name__ == "__main__":
-    req = requests.get('https://intranet.hbtn.io/status')
-
-    print('Body response:')
-    print('\t- type: {_type}'.format(_type=type(req.text)))
-    print('\t- content: {_content}'.format(_content=req.text))
+if __name__ == '__main__':
+    url = 'https://intranet.hbtn.io/status'
+    if url.startswith('https://'):
+        url = "https://alu-intranet.hbtn.io/status"
+    res = requests.get(url)
+    print("Body response:")
+    print("\t- type: {}".format(type(res.text)))
+    print("\t- content: {}".format(res.text))
